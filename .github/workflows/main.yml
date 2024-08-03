@@ -46,6 +46,12 @@ jobs:
       - name: Change base-tag in index.html
         run: sed -i 's/<base href="\/" \/>/<base href="\/BlzDplGhPg\/" \/>/g' build/wwwroot/index.html
 
+      - name: Commit wwwroot to GitHub Pages
+        uses: github-pages-deploy-action@3.7.1
+        with:          
+          BRANCH: gh-pages
+          FOLDER: build/wwwroot
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
